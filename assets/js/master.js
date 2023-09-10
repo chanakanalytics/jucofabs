@@ -19,6 +19,20 @@ jQuery(document).ready(function ($) {
 		centerMode: true,
 		arrows: false,
 		speed: 1000,
+		responsive: [
+			{
+				breakpoint: 600,
+				settings: {
+				  slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 400,
+				settings: {
+				  slidesToShow: 2,
+				}
+			}
+		]
 	});
 
 	var $slider = $('.product-slider-first');
@@ -69,6 +83,46 @@ jQuery(document).ready(function ($) {
 	$newSlider.on("init reInit afterChange", function(event, slick) {
 		$(".new-current-items span").text(slick.slickCurrentSlide() + 1 );
 		$(".new-total-items span").text( slick.slideCount);
+	});
+
+
+
+
+	$('.friendly-products-slider').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+  		autoplaySpeed: 2000,
+		speed: 500,
+		variableWidth: true,
+		dots: true,
+	});
+
+
+	$('.video-slider').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+  		autoplaySpeed: 2000,
+		speed: 500,
+		responsive: [
+			{
+			  breakpoint: 991,
+			  settings: {
+				slidesToShow: 2,
+			  }
+			},
+			{
+				breakpoint: 768,
+				settings: {
+				  slidesToShow: 1,
+				}
+			  }
+		]
 	});
 
 	
