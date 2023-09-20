@@ -1,3 +1,27 @@
+:root {
+  font-size: 18px;
+  --background-color: #4d5061;
+  --inner-cursor-border-color: rgba(255, 51, 54, .6);
+  --mid-cursor-border-color: rgba(255, 255, 255, .8);
+  --outer-cursor-border-color: rgb(255, 51, 54, .5);
+  /* --color: rgb(255, 51, 54); */
+  --inner-border-size: 1px;
+  --mid-border-size: 2px;
+  --outer-border-size: 8px;
+  
+  --cursor-size: 40px;
+  --inner-cursor-size: calc(.6 * var(--cursor-size));
+  --mid-cursor-size: var(--cursor-size);
+  --outer-cursor-size: calc(1.2 * var(--cursor-size));
+  
+  --inner-cursor-margin: calc((var(--mid-cursor-size) / 2) - (var(--inner-cursor-size) / 2) - var(--mid-border-size));
+  --mid-cursor-margin: calc(-.5 * var(--mid-cursor-size));
+  --outer-cursor-margin: calc((var(--mid-cursor-size) / 2) - (var(--outer-cursor-size) / 2) - var(--mid-border-size));
+  
+  --transition-duration: 100ms;
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -121,8 +145,9 @@ div#scroll-bar {
 	transform: translateY(15px);
 	-webkit-transition: all 200ms linear;
 	transition: all 200ms linear;
-	padding: 3px;
-	background-color: var(--secondaryColor);
+	padding: 0px;
+	/* background-color: rgba(255, 255, 255, 0.2); */
+  backdrop-filter: blur(2px);
 }
 
 .progress-wrap:before {
@@ -132,12 +157,12 @@ div#scroll-bar {
 	transform: rotate(-90deg);
 	left: 17px;
 	font-size: 26px;
-	color: #fff;
+	color: #FF3335;
 	transition: 0.5s;
 }
 
 .progress-wrap:hover:before {
-	color: #fff;
+	color: #FF3335;
 	top: 5px;
 }
 
@@ -156,11 +181,13 @@ div#scroll-bar {
 }
 
 .progress-wrap svg path {
-	fill: #FF3335;
+	fill: transparent;
+  stroke: #FF3335;
+  stroke-width: 3;
 }
 
 .progress-wrap svg.progress-circle path {
-	stroke: #fff;
+	stroke: #FF3335;
 	stroke-width: 3;
 	box-sizing: border-box;
 	-webkit-transition: all 200ms linear;
@@ -206,7 +233,6 @@ header.fixd-header{
 a.logo{
   position: relative;
   display: inline-block;
-  max-width: 200px;
 }
 
 .menu-icon{
@@ -437,6 +463,115 @@ nav ul li a:hover:before{
 
 
 
+
+body.custom-cursor-active {
+  cursor: none;
+}
+
+.custom-cursor::before,
+.custom-cursor::after,
+.custom-cursor {
+position: absolute;
+border-radius: 50%;
+z-index: 9999;
+box-sizing: border-box;
+}
+
+.custom-cursor::before,
+.custom-cursor::after {
+content: "";
+}
+
+.custom-cursor {
+  margin-top: var(--mid-cursor-margin);
+  margin-left: var(--mid-cursor-margin);
+  width: var(--mid-cursor-size);
+  height: var(--mid-cursor-size);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: var(--mid-border-size) solid var(--mid-cursor-border-color);
+  display: inline-block;
+  transition-duration: var(--transition-duration);
+  transition-timing-function: ease-out;
+  animation: mid-cursor-animation .5s infinite alternate;
+  pointer-events: none;
+}
+
+.custom-cursor::before {
+content: "";
+border: var(--inner-border-size) solid var(--inner-cursor-border-color);
+width: calc(var(--inner-cursor-size));
+height: calc(var(--inner-cursor-size));
+margin-top: var(--inner-cursor-margin);
+margin-left: var(--inner-cursor-margin);
+animation: inner-cursor-animation .11s infinity alternate;
+animation-delay: .2s;
+}
+
+.custom-cursor::after {
+content: "";
+border: var(--outer-border-size) solid var(--outer-cursor-border-color);
+width: var(--outer-cursor-size);
+height: var(--outer-cursor-size);
+margin-top: var(--outer-cursor-margin);
+margin-left: var(--outer-cursor-margin);
+animation: outer-cursor-animation .7s infinite alternate;
+}
+
+
+@keyframes mid-cursor-animation {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(.7);
+  }
+}
+
+@keyframes outer-cursor-animation {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(.4);
+  }
+}
+
+@keyframes inner-cursor-animation {
+  from {
+      transform: scale(.1);
+  }
+  to {
+      transform: scale(3);
+  }
+}
+
+
+@keyframes custom-cursor-click {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(3);
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+
+.custom-cursor-click {
+  animation: custom-cursor-click .5s forwards;
+  border-color: green!important;
+}
+
+.custom-cursor.pointer {
+  border-color: red;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: scale(1);
+}
+.custom-cursor.not-allowed {
+  border-color: red;
+}
 
 
 

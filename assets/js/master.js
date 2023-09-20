@@ -12,28 +12,42 @@ jQuery(document).ready(function ($) {
 
 
 	$('.product-slider-first').slick({
-		infinite: false,
+		infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		variableWidth: true,
-		centerMode: true,
+		autoplay: true,
+  		autoplaySpeed: 2000,
+		arrows: false,
+		asNavFor: '.product-slider-box-text-slide',
+		speed: 1000,
+		// responsive: [
+		// 	{
+		// 		breakpoint: 600,
+		// 		settings: {
+		// 		  slidesToShow: 3,
+		// 		}
+		// 	},
+		// 	{
+		// 		breakpoint: 400,
+		// 		settings: {
+		// 		  slidesToShow: 2,
+		// 		}
+		// 	}
+		// ]
+	});
+
+	$('.product-slider-box-text-slide').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		autoplay: true,
+  		autoplaySpeed: 2000,
 		arrows: false,
 		speed: 1000,
-		responsive: [
-			{
-				breakpoint: 600,
-				settings: {
-				  slidesToShow: 3,
-				}
-			},
-			{
-				breakpoint: 400,
-				settings: {
-				  slidesToShow: 2,
-				}
-			}
-		]
+		asNavFor: '.product-slider-first'
 	});
+
 
 	var $slider = $('.product-slider-first');
 	var $progressBar = $('.slider-first-progress');
@@ -197,3 +211,40 @@ window.onscroll = function () {
 	});
 	
 })(jQuery); 
+
+
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+	const cursorElement = document.createElement('div');
+	cursorElement.classList.add('custom-cursor');
+	document.body.appendChild(cursorElement);
+	document.body.classList.add('custom-cursor-active');
+	
+	document.addEventListener('mousemove', e => {
+		cursorElement.setAttribute("style", "top: " + e.pageY + "px; left:" + e.pageX +"px;");
+	});
+   
+	const customEventElements = document.querySelectorAll('[data-cursor-event="hover"]');
+  
+	customEventElements.forEach(
+	  function(customElement) {
+		let currentCustomElement = customElement;
+		customElement.addEventListener("mouseenter", e => {
+		  cursorElement.classList.add(currentCustomElement.getAttribute('data-event-class'));
+		});
+		customElement.addEventListener("mouseout", e => {
+		  cursorElement.classList.remove(currentCustomElement.getAttribute('data-event-class'));
+		});
+	  }
+	);
+	
+	document.addEventListener('click', () => {
+	  cursorElement.classList.add("custom-cursor-click");
+  
+	  setTimeout(() => {
+		cursorElement.classList.remove("custom-cursor-click");
+	  }, 500);
+	});
+  });
