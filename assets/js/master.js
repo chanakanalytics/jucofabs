@@ -241,12 +241,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
 	});
 	
+    
 	// Get the draggable elements
-	const shopnowfills = document.querySelectorAll(".shop-now-fill");
+	const viewDetailsfills = document.querySelectorAll(".view-details-fill");
 
     // Add event listener for mouseover
-    shopnowfills.forEach((shopnowfill) => {
-        shopnowfill.addEventListener("mouseover", () => {
+    viewDetailsfills.forEach((viewDetailsfill) => {
+        viewDetailsfill.addEventListener("mouseover", () => {
             document
                 .getElementById("cursor")
                 .classList.add("custom-cursor-circle-fill");
@@ -254,20 +255,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add event listener for mouseout
-    shopnowfills.forEach((shopnowfill) => {
-        shopnowfill.addEventListener("mouseout", () => {
+    viewDetailsfills.forEach((viewDetailsfill) => {
+        viewDetailsfill.addEventListener("mouseout", () => {
             document
                 .getElementById("cursor")
                 .classList.remove("custom-cursor-circle-fill");
         });
 	});
 	
-    const shopnows = document.querySelectorAll(".shop-now");
+    const viewDetailss = document.querySelectorAll(".view-details");
 
     // Add event listener for mouseover
-    shopnows.forEach((shopnow) => {
-        shopnow.addEventListener("mouseover", () => {
-			shopnow.querySelector('#button').classList.add("d-none")
+    viewDetailss.forEach((viewDetails) => {
+        viewDetails.addEventListener("mouseover", () => {
+			viewDetails.querySelector('#button').classList.add("d-none")
             document
                 .getElementById("cursor")
                 .classList.add("custom-cursor-circle");
@@ -275,9 +276,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Add event listener for mouseout
-    shopnows.forEach((shopnow) => {
-        shopnow.addEventListener("mouseout", () => {
-			shopnow.querySelector('#button').classList.remove("d-none")
+    viewDetailss.forEach((viewDetails) => {
+        viewDetails.addEventListener("mouseout", () => {
+			viewDetails.querySelector('#button').classList.remove("d-none")
             document
                 .getElementById("cursor")
                 .classList.remove("custom-cursor-circle");
