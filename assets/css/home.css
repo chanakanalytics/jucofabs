@@ -41,7 +41,7 @@
     font-size: 150px;
     font-weight: 900;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--Primary-white);
     padding-bottom: 100px;
 }
 
@@ -63,7 +63,7 @@
 }
 
 .text-border span{
-    -webkit-text-stroke-color: #FF3335;
+    -webkit-text-stroke-color: var(--Primary-color);
 }
 
 .banner-tag{
@@ -73,7 +73,7 @@
     top: 15%;
 }
 .banner-tag a{
-    color: #787E92;
+    color: var(--body-text);
 }
 
 .banner-tag p{
@@ -81,7 +81,7 @@
 }
 
 .banner-tag a:hover{
-    color: #FF3335;
+    color: var(--Primary-color);
 }
 
 
@@ -122,7 +122,7 @@
 }
 .about-left h2 span{
     display: block;
-    -webkit-text-fill-color: #FF3335;
+    -webkit-text-fill-color: var(--Primary-color);
     -webkit-text-stroke-width: 0;
 }
 
@@ -162,7 +162,10 @@
     padding: 120px 0;
     position: relative;
 }
-
+.product-slider-section .custom-cursor-drag{
+    top: 400px;
+    right: 400px;
+}
 .product-slider-section h5{
     text-align: right;
     color: #fff;
@@ -194,7 +197,7 @@
     border-radius: 2px;
     overflow: hidden;
     background-color: #fff;
-    background-image: linear-gradient(to right, #FF3335, #FF3335);
+    background-image: linear-gradient(to right, var(--Primary-color), var(--Primary-color));
     background-repeat: no-repeat;
     background-size: 0 100%;
     transition: background-size .4s ease-in-out;
@@ -205,7 +208,7 @@
     transform: rotate(90deg);
     position: absolute;
     left: 0;
-    bottom: 140px;
+    bottom: 340px;
 }
 .product-slider-handel .height-progress-bar{
     width: 50px;
@@ -248,9 +251,15 @@
     object-fit: cover;
 }
 
-.new-right h3{
+.new-right h2{
     font-size: 50px;
     padding-top: 100px;
+    color: var(--Primary-color);
+}
+
+.new-right .new-img-slider-section-text-slide p{
+    font-size: 20px;
+    color: var(--body-text);
 }
 .new-slider-handel{
     align-items: end;
@@ -297,7 +306,7 @@
     color: #fff;
 }
 .card-bg a:hover{
-    color: #FF3335;
+    color: var(--Primary-color);
 }
 
 .jute-details{
@@ -335,7 +344,7 @@
     display: inline-block;
 }
 .line-btn:hover{
-    color: #FF3335;
+    color: var(--Primary-color);
 }
 
 .line-btn::before{
@@ -349,7 +358,7 @@
     transition: 0.5s;
 }
 .line-btn:hover::before{
-    background-color: #FF3335;
+    background-color: var(--Primary-color);
 }
 
 
@@ -401,7 +410,7 @@
 }
 .friendly-products-text h5{
     font-size: 35px;
-    color: #ffffff;
+    color: var(--Primary-white);
     text-transform: uppercase;
 }
 .friendly-products-text p{
@@ -469,7 +478,7 @@
 
 .friendly-products-slider .slick-dots .slick-active button{
     font-size: 45px;
-    color: #FF3335;
+    color: var(--Primary-color);
     padding-bottom: 10px;
     border-bottom: solid 2px #fff;
 }
@@ -498,7 +507,7 @@
 }
 
 .content-aria h3 span{
-    color: #FF3335;
+    color: var(--Primary-color);
     font-style: italic;
     text-transform: capitalize;
 }
@@ -544,9 +553,10 @@
     align-items: center;
     justify-content: center;
     color: #fff;
+    border: 1px solid red;
 }
 .video-btn:hover{
-    color: #FF3335;
+    color: var(--Primary-color);
 }
 .video-slider{
     padding-top: 80px;
@@ -617,8 +627,8 @@
 }
 .product-slider-box-text a h2{
     font-size: 35px;
-    font-weight: 200;
-    color: #FF3335;
+    font-weight: 400;
+    color: var(--Primary-color);
 }
 .product-slider-box-text a p{
     font-size: 18px;

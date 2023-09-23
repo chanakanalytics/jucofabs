@@ -76,7 +76,20 @@ jQuery(document).ready(function ($) {
         autoplay: true,
         autoplaySpeed: 2000,
         fade: true,
-        speed: 500,
+        speed: 1000,
+        asNavFor: ".new-img-slider-section-text-slide",
+    });
+
+    $(".new-img-slider-section-text-slide").slick({
+        infinite: false,
+        slidesToShow: 1,
+        fade: true,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        fade: true,
+        speed: 1000,
+        asNavFor: ".new-img-slider-section",
     });
 
     var $newSlider = $(".new-img-slider-section");
@@ -197,91 +210,3 @@ window.onscroll = function () {
         });
     });
 })(jQuery);
-
-document.addEventListener("DOMContentLoaded", function () {
-    const cursorElement = document.createElement("div");
-	cursorElement.classList.add("custom-cursor");
-	// cursorElement.classList.add("custom-cursor-circle");
-	cursorElement.id = "cursor"
-    const cursorContainer = document.createElement("div");
-    cursorContainer.classList.add("custom-cursor-active");
-    cursorContainer.appendChild(cursorElement);
-    document.body.appendChild(cursorContainer);
-
-    document.addEventListener("mousemove", (e) => {
-        cursorContainer.setAttribute(
-            "style",
-            "left: " + e.pageX + "px; top:" + e.pageY + "px;"
-        );
-    });
-
-    const customEventElements = document.querySelectorAll(
-        '[data-cursor-event="hover"]'
-    );
-
-    customEventElements.forEach(function (customElement) {
-        let currentCustomElement = customElement;
-        customElement.addEventListener("mouseenter", (e) => {
-            cursorElement.classList.add(
-                currentCustomElement.getAttribute("data-event-class")
-            );
-        });
-        customElement.addEventListener("mouseout", (e) => {
-            cursorElement.classList.remove(
-                currentCustomElement.getAttribute("data-event-class")
-            );
-        });
-    });
-
-    document.addEventListener("click", () => {
-        cursorElement.classList.add("custom-cursor-click");
-
-        setTimeout(() => {
-            cursorElement.classList.remove("custom-cursor-click");
-        }, 500);
-	});
-	
-    
-	// Get the draggable elements
-	const viewDetailsfills = document.querySelectorAll(".view-details-fill");
-
-    // Add event listener for mouseover
-    viewDetailsfills.forEach((viewDetailsfill) => {
-        viewDetailsfill.addEventListener("mouseover", () => {
-            document
-                .getElementById("cursor")
-                .classList.add("custom-cursor-circle-fill");
-        });
-    });
-
-    // Add event listener for mouseout
-    viewDetailsfills.forEach((viewDetailsfill) => {
-        viewDetailsfill.addEventListener("mouseout", () => {
-            document
-                .getElementById("cursor")
-                .classList.remove("custom-cursor-circle-fill");
-        });
-	});
-	
-    const viewDetailss = document.querySelectorAll(".view-details");
-
-    // Add event listener for mouseover
-    viewDetailss.forEach((viewDetails) => {
-        viewDetails.addEventListener("mouseover", () => {
-			viewDetails.querySelector('#button').classList.add("d-none")
-            document
-                .getElementById("cursor")
-                .classList.add("custom-cursor-circle");
-        });
-    });
-
-    // Add event listener for mouseout
-    viewDetailss.forEach((viewDetails) => {
-        viewDetails.addEventListener("mouseout", () => {
-			viewDetails.querySelector('#button').classList.remove("d-none")
-            document
-                .getElementById("cursor")
-                .classList.remove("custom-cursor-circle");
-        });
-	});
-});

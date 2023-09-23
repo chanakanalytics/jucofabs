@@ -1,11 +1,11 @@
 body .custom-cursor-active {
-    cursor: none;
     position: absolute;
 }
 
 .custom-cursor::before,
 .custom-cursor::after,
 .custom-cursor {
+    cursor: none !important;
     position: absolute;
     border-radius: 50%;
     z-index: 9999;
@@ -23,24 +23,22 @@ body .custom-cursor-active {
     width: var(--cursor-size-regular);
     height: var(--cursor-size-regular);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border: var(--mid-border-size) solid var(--mid-cursor-border-color);
+    border: var(--cursor-border-size) solid var(--mid-cursor-border-color);
     display: inline-block;
-    /* transition-duration: var(--transition-duration);
-    transition-timing-function: ease-out;
-    animation: mid-cursor-animation .5s infinite alternate; */
     transition: .5s width, .5s height, .5s margin-top, .5s margin-left, .5s background-color;
     pointer-events: none;
 }
 
-.custom-cursor-circle,
-.custom-cursor-circle-fill {
-    /* cursor: none; */
+.custom-cursor-drag{
+    cursor: none !important;
     width: var(--cursor-size-circle);
     height: var(--cursor-size-circle);
     margin-top: var(--cursor-margin-circle);
     margin-left: var(--cursor-margin-circle);
     border-radius: 100%;
-    border: solid 1px #ff3335;
+    border: solid 1.5px var(--Primary-white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
     background-color: transparent;
     display: inline-flex;
     flex-direction: column;
@@ -48,6 +46,35 @@ body .custom-cursor-active {
     align-items: center;
     font-style: italic;
     font-size: 14px;
+    position: absolute;
+    z-index: 9999;
+}
+
+.custom-cursor-circle,
+.custom-cursor-circle-fill {
+    cursor: none !important;
+    width: var(--cursor-size-circle);
+    height: var(--cursor-size-circle);
+    margin-top: var(--cursor-margin-circle);
+    margin-left: var(--cursor-margin-circle);
+    border-radius: 100%;
+    border: solid 1px var(--Primary-color);
+    backdrop-filter: blur(4px);
+    background-color: transparent;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-size: 14px;
+}
+.custom-cursor-circle{
+    background-color: transparent;
+    color: var(--Primary-color);
+}
+.custom-cursor-circle-fill{
+    background-color: var(--Primary-color);
+    color: var(--Primary-white);
 }
 .custom-cursor-circle::before,
 .custom-cursor-circle-fill::before {
@@ -57,19 +84,26 @@ body .custom-cursor-active {
     height: 20px;
     top: 30%;
 }
+.custom-cursor-drag::after{
+    content: "Drag";
+    font-family: serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--Primary-white);
+    text-shadow: -1px 1px 9px var(--background-color);
+}
 .custom-cursor-circle::after,
 .custom-cursor-circle-fill::after {
     content: "View Details";
     display: inline-block;
     top: 50%;
+    font-size: 12px;
 }
-.custom-cursor-circle{
-    background-color: #0000004b;
-    color: var(--Primary-color);
+.custom-cursor-circle::after{
+    font-weight: bold;
 }
-.custom-cursor-circle-fill{
-    background-color: var(--Primary-color);
-    color: #ffffff;
+.custom-cursor-circle-fill::after{
+    font-weight: normal;
 }
 .custom-cursor-circle::before{
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="red"> <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /> </svg>') no-repeat center;
@@ -156,26 +190,6 @@ body .custom-cursor-active {
 .custom-cursor.not-allowed {
     border-color: red;
 }
-
-/* .circle-btn {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    border: solid 1px #ff3335;
-    color: #ff3335;
-    background-color: transparent;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
-    font-size: 14px;
-}
-.circle-btn:hover {
-    background-color: #ff3335;
-    color: #fff;
-} */
-
 @media (max-width: 480px) {
     div.custom-cursor-circle {
         display: none;
