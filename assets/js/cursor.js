@@ -2,6 +2,10 @@ const ClassMap = {
     "drag-items": "custom-cursor-drag",
     "view-details-fill": "custom-cursor-circle-fill",
     "view-details": "custom-cursor-circle",
+    "menu-icon": "custom-cursor-menu",
+    "menu-item": "custom-cursor-menu",
+    "right-menu": "custom-cursor-menu-close",
+    "video-slider-items": "custom-cursor-video-play",
     
 }
 

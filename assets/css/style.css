@@ -10,8 +10,12 @@
     --outer-cursor-border-color: rgb(255, 51, 54, 0.5);
     --cursor-border-size: 2px;
     --cursor-size-regular: 20px;
+    --cursor-size-menu-close: 50px;
+    --cursor-size-video-play: 60px;
     --cursor-size-circle: 100px;
     --cursor-margin-regular: calc(-0.5 * var(--cursor-size-regular));
+    --cursor-margin-menu-close: calc(-0.5 * var(--cursor-size-menu-close));
+    --cursor-margin-video-play: calc(-0.5 * var(--cursor-size-video-play));
     --cursor-margin-circle: calc(-0.7 * var(--cursor-size-circle));
     --transition-duration: 100ms;
 }
@@ -266,8 +270,7 @@ a.logo {
 }
 .menu-icon span:nth-child(2) {
     width: 15px;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 49%;
 }
 .menu-icon span:nth-child(3) {
     width: 20px;
@@ -328,7 +331,9 @@ nav ul li a {
 nav ul li a:hover {
     color: #000;
 }
-
+nav ul li a:hover ~ .custom-cursor{
+    display: none;
+}
 nav ul li:last-child a {
     margin-bottom: 20px;
 }

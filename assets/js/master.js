@@ -18,20 +18,6 @@ jQuery(document).ready(function ($) {
         arrows: false,
         asNavFor: ".product-slider-box-text-slide",
         speed: 1000,
-        // responsive: [
-        // 	{
-        // 		breakpoint: 600,
-        // 		settings: {
-        // 		  slidesToShow: 3,
-        // 		}
-        // 	},
-        // 	{
-        // 		breakpoint: 400,
-        // 		settings: {
-        // 		  slidesToShow: 2,
-        // 		}
-        // 	}
-        // ]
     });
 
     $(".product-slider-box-text-slide").slick({
@@ -131,7 +117,7 @@ jQuery(document).ready(function ($) {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         speed: 500,
         responsive: [
@@ -149,7 +135,24 @@ jQuery(document).ready(function ($) {
             },
         ],
     });
-
+    // const sliderList = [
+    //     ".product-slider-first",
+    //     ".product-slider-box-text-slide",
+    //     ".new-img-slider-section",
+    //     ".new-img-slider-section-text-slide",
+    //     ".friendly-products-slider",
+    //     ".video-slider",
+    // ];
+    // sliderList.forEach((slider) => {
+    //     const slider = document.querySelector(slidername)
+    //     console.log(slider);
+    //     $(slider).on("mouseover", (e) => {
+    //         $(slider).slick("slickPause");
+    //     });
+    //     $(slider).on("mouseout", (e) => {
+    //         $(slider).slick("slickPlay");
+    //     });
+    // });
     // --------- animation  --------//
 
     AOS.init({

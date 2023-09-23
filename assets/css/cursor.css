@@ -1,7 +1,6 @@
 body .custom-cursor-active {
     position: absolute;
 }
-
 .custom-cursor::before,
 .custom-cursor::after,
 .custom-cursor {
@@ -11,12 +10,10 @@ body .custom-cursor-active {
     z-index: 9999;
     box-sizing: border-box;
 }
-
 .custom-cursor::before,
 .custom-cursor::after {
     content: "";
 }
-
 .custom-cursor {
     margin-top: var(--cursor-margin-regular);
     margin-left: var(--cursor-margin-regular);
@@ -28,7 +25,6 @@ body .custom-cursor-active {
     transition: .5s width, .5s height, .5s margin-top, .5s margin-left, .5s background-color, .5s display;
     pointer-events: none;
 }
-
 .custom-cursor-drag{
     cursor: none !important;
     width: var(--cursor-size-circle);
@@ -49,7 +45,8 @@ body .custom-cursor-active {
     position: absolute;
     z-index: 2;
 }
-
+.custom-cursor-menu-close,
+.custom-cursor-video-play,
 .custom-cursor-circle,
 .custom-cursor-circle-fill {
     cursor: none !important;
@@ -68,7 +65,23 @@ body .custom-cursor-active {
     font-style: italic;
     font-size: 14px;
 }
-.custom-cursor-circle{
+.custom-cursor-menu-close{
+    width: var(--cursor-size-menu-close);
+    height: var(--cursor-size-menu-close);
+    margin-top: var(--cursor-margin-menu-close);
+    margin-left: var(--cursor-margin-menu-close);
+    /* background-color: var(--Primary-color); */
+    border: solid 1px var(--Primary-white);
+}
+.custom-cursor-menu-close::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><rect width="30" height="30" fill="none"/><path d="M7 17L16.8995 7.10051" stroke="white" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7.00001L16.8995 16.8995" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
+}
+.custom-cursor-circle,
+.custom-cursor-video-play {
     background-color: transparent;
     color: var(--Primary-color);
 }
@@ -83,28 +96,26 @@ body .custom-cursor-active {
     width: 20px;
     height: 20px;
     top: 30%;
+    filter: drop-shadow(-1px 1px 9px var(--background-color));
 }
 .custom-cursor-drag::after{
     content: "Drag";
+    text-transform: capitalize;
     font-family: serif;
     font-weight: 700;
     font-size: 20px;
     color: var(--Primary-white);
-    text-shadow: -1px 1px 9px var(--background-color);
 }
 .custom-cursor-circle::after,
 .custom-cursor-circle-fill::after {
-    content: "View Details";
+    content: "View";
+    text-transform: capitalize;
     display: inline-block;
+    font-family: serif;
+    font-weight: 700;
+    font-size: 20px;
     top: 50%;
-    font-size: 12px;
     text-shadow: -1px 1px 9px var(--background-color);
-}
-.custom-cursor-circle::after{
-    font-weight: bold;
-}
-.custom-cursor-circle-fill::after{
-    font-weight: normal;
 }
 .custom-cursor-circle::before{
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="red"> <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /> </svg>') no-repeat center;
@@ -112,59 +123,30 @@ body .custom-cursor-active {
 .custom-cursor-circle-fill::before{
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="white"> <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /> </svg>') no-repeat center;
 }
+.custom-cursor-menu{
+    width: 0;
+    height: 0;
+    border: none;
+    display: none;
+}
+.custom-cursor-video-play{
+    width: var(--cursor-size-video-play);
+    height: var(--cursor-size-video-play);
+    margin-top: var(--cursor-margin-video-play);
+    margin-left: var(--cursor-margin-video-play);
+}
+.custom-cursor-video-play::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-shadow: -1px 1px 9px var(--background-color);
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="20" height="20"><path stroke="red" fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" /></svg>') no-repeat center;
+}
 .drag #button{
     width: 100px;
     height: 100px;
 }
-
-/* .custom-cursor::before {
-  content: "";
-  border: var(--inner-border-size) solid var(--inner-cursor-border-color);
-  width: calc(var(--inner-cursor-size));
-  height: calc(var(--inner-cursor-size));
-  margin-top: var(--inner-cursor-margin);
-  margin-left: var(--inner-cursor-margin);
-  animation: inner-cursor-animation .11s infinity alternate;
-  animation-delay: .2s;
-  }
-  
-  .custom-cursor::after {
-  content: "";
-  border: var(--outer-border-size) solid var(--outer-cursor-border-color);
-  width: var(--outer-cursor-size);
-  height: var(--outer-cursor-size);
-  margin-top: var(--outer-cursor-margin);
-  margin-left: var(--outer-cursor-margin);
-  animation: outer-cursor-animation .7s infinite alternate;
-  } */
-
-@keyframes mid-cursor-animation {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(0.7);
-    }
-}
-
-@keyframes outer-cursor-animation {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(0.4);
-    }
-}
-
-@keyframes inner-cursor-animation {
-    from {
-        transform: scale(0.1);
-    }
-    to {
-        transform: scale(3);
-    }
-}
-
 @keyframes custom-cursor-click {
     0% {
         transform: scale(1);
@@ -177,12 +159,10 @@ body .custom-cursor-active {
         opacity: 0;
     }
 }
-
 .custom-cursor-click {
     animation: custom-cursor-click 0.5s forwards;
     border-color: green !important;
 }
-
 .custom-cursor.pointer {
     border-color: red;
     background-color: rgba(0, 0, 0, 0.5);
@@ -192,6 +172,9 @@ body .custom-cursor-active {
     border-color: red;
 }
 @media (max-width: 480px) {
+    div.custom-cursor ,
+    div.custom-cursor-circle ,
+    div.custom-cursor-circle-fill ,
     div.custom-cursor-circle {
         display: none;
     }
