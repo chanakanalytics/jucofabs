@@ -25,7 +25,7 @@ body .custom-cursor-active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border: var(--cursor-border-size) solid var(--mid-cursor-border-color);
     display: inline-block;
-    transition: .5s width, .5s height, .5s margin-top, .5s margin-left, .5s background-color;
+    transition: .5s width, .5s height, .5s margin-top, .5s margin-left, .5s background-color, .5s display;
     pointer-events: none;
 }
 
@@ -47,7 +47,7 @@ body .custom-cursor-active {
     font-style: italic;
     font-size: 14px;
     position: absolute;
-    z-index: 9999;
+    z-index: 2;
 }
 
 .custom-cursor-circle,
@@ -98,6 +98,7 @@ body .custom-cursor-active {
     display: inline-block;
     top: 50%;
     font-size: 12px;
+    text-shadow: -1px 1px 9px var(--background-color);
 }
 .custom-cursor-circle::after{
     font-weight: bold;
