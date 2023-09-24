@@ -10,23 +10,26 @@ const ClassMap = {
 }
 
 const Cursor = (classname) => {
+    const windowWidth = window.innerWidth
     const elements = document.querySelectorAll("." + classname)
-    elements.forEach((element) => {
-        var button = document.querySelector("#" + element.getAttribute("data-event-off"))
-        var cursorKey = document.getElementById("cursor")
-        element.addEventListener("mouseover", () => {
-            if (button) {
-                button.classList.add("d-none")
-            }
-            cursorKey.classList.add(ClassMap[classname]);
+    if (windowWidth > 480) {
+        elements.forEach((element) => {
+            var button = document.querySelector("#" + element.getAttribute("data-event-off"))
+            var cursorKey = document.getElementById("cursor")
+            element.addEventListener("mouseover", () => {
+                if (button) {
+                    button.classList.add("d-none")
+                }
+                cursorKey.classList.add(ClassMap[classname]);
+            })
+            element.addEventListener("mouseout", () => {
+                if (button) {
+                    button.classList.remove("d-none")
+                }
+                cursorKey.classList.remove(ClassMap[classname]);
+            })
         })
-        element.addEventListener("mouseout", () => {
-            if (button) {
-                button.classList.remove("d-none")
-            }
-            cursorKey.classList.remove(ClassMap[classname]);
-        })
-    })
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -55,17 +55,23 @@
                             <span></span>
                         </div>
 
-                        <div class="right-menu">
+                        <div class="right-menu" data-event-off="close">
 
                             <div class="menu-items py-3 px-md-5 px-4">
                                 <div>
                                     <nav class="scroll">
+                                        <div class="d-flex">
+                                            <div class="custom-cursor-menu-close mt-5 ms-auto" id="close"></div>
+                                        </div>
                                         <ul>
                                             <li>
                                                 <a class="menu-item" href="#!">Home</a>
                                             </li>
                                             <li>
                                                 <a class="menu-item" href="#!">About</a>
+                                            </li>
+                                            <li>
+                                                <a class="menu-item" href="#!">Contact Us</a>
                                             </li>
                                             <li>
                                                 <a class="menu-item" href="#!">Product</a>
@@ -102,7 +108,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -243,9 +248,9 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="custom-cursor-drag drag-items" data-event-off="dragButton1" id="dragButton1"></div>
                     </div>
                 </div>
-                <div class="custom-cursor-drag drag-items" data-event-off="dragButton1" id="dragButton1"></div>
                 <div class="d-flex product-slider-handel">
                     <div class="current-items text-primary">0<span>1</span></div>
                     <div class="height-progress-bar">
@@ -717,23 +722,37 @@
             </div>
 
             <div class="footer-bottom bg-dark py-4">
-                <div class="wrapper text-white d-flex justify-content-between align-items-center px-5">
-                    <p class="mb-0 fw-light">
-                        © 2023 Jucofabs.com | <span class="fst-italic">Powered by</span> <span
-                              class="text-primary">Chanak Analytics</span>
+                <div class="wrapper text-white px-5">
+                    <p class="mb-0">
+                        <span class="fst-italic">Design & Develop by</span>
+                        <a href="https://chanakanalytics.com/" target="_blank" class="text-primary">Chanak Analytics</a>
+                        <span>Copyright Jucofabs.com</span>
+                        <span>© 2023. All Rights Reserved</span>
                     </p>
 
-                    <div class="d-flex align-items-center">
+                    <div class="d-flex ms-auto align-items-center">
                         <p class="mb-0">Follow Us:</p>
                         <ul class="ps-3 d-flex mb-0 footer-social-media">
-                            <li class="pe-3"><a href="#" ><i
-                                       class="fab fa-facebook-f"></i></a></li>
-                            <li class="pe-3"><a href="#" ><i
-                                       class="fab fa-twitter"></i></a></li>
-                            <li class="pe-3"><a href="#" ><i
-                                       class="fab fa-google-plus-g"></i></a></li>
-                            <li class=""><a href="#" ><i
-                                       class="fab fa-linkedin-in"></i></a></li>
+                            <li class="pe-3">
+                                <a href="#" >
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="pe-3">
+                                <a href="#" >
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="pe-3">
+                                <a href="#" >
+                                    <i class="fab fa-google-plus-g"></i>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" >
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

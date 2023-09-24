@@ -76,8 +76,8 @@ body .custom-cursor-active {
 .custom-cursor-menu-close::before{
     content: "";
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><rect width="30" height="30" fill="none"/><path d="M7 17L16.8995 7.10051" stroke="white" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 7.00001L16.8995 16.8995" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center;
 }
 .custom-cursor-circle,
@@ -175,7 +175,8 @@ body .custom-cursor-active {
     div.custom-cursor ,
     div.custom-cursor-circle ,
     div.custom-cursor-circle-fill ,
-    div.custom-cursor-circle {
+    div.custom-cursor-circle,
+    div.custom-cursor-drag {
         display: none;
     }
 }
