@@ -1,0 +1,136 @@
+.contact-page{
+    padding: 100px 0;
+}
+
+.contact-heading{
+    font-size: 100px;
+    font-weight: 200;
+    color: #B41516;
+}
+.contact-heading span{
+    font-weight: 600;
+    color: #fff;
+}
+
+
+
+.form-box{
+    padding: 30px;
+    background-color: #252C37;
+    border-radius: 5px;
+}
+.form-box h5{
+    font-size: 25px;
+    color: #fff;
+}
+.form-input{
+    padding-top: 20px;
+}
+.form-input label{
+    display: block;
+    color: #fff;
+}
+.form-input label span{
+    color: #B41516;
+}
+.form-input input{
+    width: 100%;
+    height: 45px;
+    border: 0;
+    border-bottom: solid 1px #fff;
+    background-color: transparent;
+    line-height: 45px;
+    color: #fff;
+}
+.form-input textarea{
+    width: 100%;
+    height: 80px;
+    border: 0;
+    border-bottom: solid 1px #fff;
+    background-color: transparent;
+    line-height: 20px;
+    color: #fff;
+    resize: none;
+    margin-top: 10px;
+}
+.form-input input::placeholder{
+    color: rgba(255,255, 255, 0.3);
+}
+.submit-btn{
+    background-color: #B41516;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 30px;
+    border: 0;
+    font-size: 20px;
+    padding: 10px;
+}
+.submit-btn:hover{
+    background-color: #920606;
+}
+
+
+.section-heading{
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #B41516;
+}
+
+.member-section{
+    padding: 100px 0 0;
+}
+
+.member-logo-section{
+    max-width: 1200px;
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+.member-logo-section img{
+    max-width: 250px;
+    height: 150px;
+}
+
+.details-box p{
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.details-box h5, .details-box h5 a{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 300;
+    color: #fff;
+}
+.details-box h5 a:hover{
+    color: #B41516;
+}
+.details-icon-box{
+    width: 22px;
+}
+.details-text-box{
+    flex: 1;
+}
+
+.details-text-box .footer-social-media li a{
+    border: solid 1px rgba(255,255, 255, 0.3);
+    text-align: center;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    font-size: 12px;
+    display: block;
+    line-height: 30px;
+}
+.details-text-box .footer-social-media{
+    padding-left: 0;
+    margin-left: 0;
+}
+.details-text-box .footer-social-media li{
+    padding: 0 5px 0 0;
+}
