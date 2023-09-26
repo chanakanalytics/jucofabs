@@ -33,28 +33,30 @@ const Cursor = (classname) => {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const cursorElement = document.createElement("div");
-	cursorElement.classList.add("custom-cursor");
-	cursorElement.id = "cursor"
-    const cursorContainer = document.createElement("div");
-    cursorContainer.classList.add("custom-cursor-active");
-    cursorContainer.appendChild(cursorElement);
-    document.body.appendChild(cursorContainer);
-
-    document.addEventListener("mousemove", (e) => {
-        cursorContainer.setAttribute(
-            "style",
-            "left: " + e.pageX + "px; top:" + e.pageY + "px;"
-        );
-    });
-    document.addEventListener("click", () => {
-        cursorElement.classList.add("custom-cursor-click");
-
-        setTimeout(() => {
-            cursorElement.classList.remove("custom-cursor-click");
-        }, 500);
-    });
-    Object.keys(ClassMap).forEach((classname) => {
-        Cursor(classname)
-    })
+    if (windowWidth > 480) {
+        const cursorElement = document.createElement("div");
+        cursorElement.classList.add("custom-cursor");
+        cursorElement.id = "cursor"
+        const cursorContainer = document.createElement("div");
+        cursorContainer.classList.add("custom-cursor-active");
+        cursorContainer.appendChild(cursorElement);
+        document.body.appendChild(cursorContainer);
+    
+        document.addEventListener("mousemove", (e) => {
+            cursorContainer.setAttribute(
+                "style",
+                "left: " + e.pageX + "px; top:" + e.pageY + "px;"
+            );
+        });
+        document.addEventListener("click", () => {
+            cursorElement.classList.add("custom-cursor-click");
+    
+            setTimeout(() => {
+                cursorElement.classList.remove("custom-cursor-click");
+            }, 500);
+        });
+        Object.keys(ClassMap).forEach((classname) => {
+            Cursor(classname)
+        })
+    }
 });
