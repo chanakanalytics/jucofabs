@@ -17,9 +17,12 @@ const Cursor = (classname) => {
             var button = document.querySelector("#" + element.getAttribute("data-event-off"))
             var cursorKey = document.getElementById("cursor")
             var img = document.createElement("img")
-            img.src = element.getAttribute("data-event-view")
+            var imgurl = element.getAttribute("data-event-view")
+            img.src = imgurl
             element.addEventListener("mouseover", () => {
-                document.getElementById("cursor").appendChild(img)
+                if (imgurl) {
+                    document.getElementById("cursor").appendChild(img)
+                }
                 if (button) {
                     button.classList.add("d-none")
                 }
@@ -30,12 +33,13 @@ const Cursor = (classname) => {
                     button.classList.remove("d-none")
                 }
                 cursorKey.classList.remove(ClassMap[ classname ]);
-                document.getElementById("cursor").removeChild(img)
+                if (imgurl) {
+                    document.getElementById("cursor").removeChild(img)
+                }
             })
         })
     }
 }
-
 document.addEventListener("DOMContentLoaded", function () {
     const windowWidth = window.innerWidth
     if (windowWidth > 480) {
