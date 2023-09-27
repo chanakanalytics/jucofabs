@@ -580,27 +580,6 @@
     padding: 100px 0;
 }
 
-.articles-section h2 {
-    max-width: 1000px;
-    padding: 80px 0;
-}
-.articles-section h2 a{
-    display: inline;
-    font-size: 45px; 
-    color: #000;
-    font-weight: 600;
-    word-break: break-all;
-}
-.articles-section h2 a:hover{
-    color: #B41516;
-}
-
-
-
-
-
-
-
 .product-slider-box{
     display: flex;
     align-items: center;
