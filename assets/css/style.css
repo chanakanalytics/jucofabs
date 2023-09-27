@@ -13,10 +13,14 @@
     --cursor-size-menu-close: 50px;
     --cursor-size-video-play: 60px;
     --cursor-size-circle: 100px;
+    --cursor-size-rectangle-width: 250px;
+    --cursor-size-rectangle-height: 250px;
     --cursor-margin-regular: calc(-0.5 * var(--cursor-size-regular));
     --cursor-margin-menu-close: calc(-0.5 * var(--cursor-size-menu-close));
     --cursor-margin-video-play: calc(-0.5 * var(--cursor-size-video-play));
     --cursor-margin-circle: calc(-0.7 * var(--cursor-size-circle));
+    --cursor-margin-rectangle-top: calc(-1.15 * var(--cursor-size-rectangle-height));
+    --cursor-margin-rectangle-left: calc(-.53 * var(--cursor-size-rectangle-width));
     --transition-duration: 100ms;
 }
 

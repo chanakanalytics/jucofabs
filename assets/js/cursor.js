@@ -6,7 +6,7 @@ const ClassMap = {
     "menu-item": "custom-cursor-menu",
     "right-menu": "custom-cursor-menu-close",
     "video-slider-items": "custom-cursor-video-play",
-    
+    "view-img" : "custom-cursor-img-view"
 }
 
 const Cursor = (classname) => {
@@ -16,7 +16,10 @@ const Cursor = (classname) => {
         elements.forEach((element) => {
             var button = document.querySelector("#" + element.getAttribute("data-event-off"))
             var cursorKey = document.getElementById("cursor")
+            var img = document.createElement("img")
+            img.src = element.getAttribute("data-event-view")
             element.addEventListener("mouseover", () => {
+                document.getElementById("cursor").appendChild(img)
                 if (button) {
                     button.classList.add("d-none")
                 }
@@ -26,13 +29,15 @@ const Cursor = (classname) => {
                 if (button) {
                     button.classList.remove("d-none")
                 }
-                cursorKey.classList.remove(ClassMap[classname]);
+                cursorKey.classList.remove(ClassMap[ classname ]);
+                document.getElementById("cursor").removeChild(img)
             })
         })
     }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    const windowWidth = window.innerWidth
     if (windowWidth > 480) {
         const cursorElement = document.createElement("div");
         cursorElement.classList.add("custom-cursor");

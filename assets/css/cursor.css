@@ -143,6 +143,41 @@ body .custom-cursor-active {
     text-shadow: -1px 1px 9px var(--background-color);
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="20" height="20"><path stroke="red" fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" /></svg>') no-repeat center;
 }
+
+.custom-cursor-img-view{
+    min-width: var(--cursor-size-rectangle-width);
+    min-height: var(--cursor-size-rectangle-height);
+    height: max-content;
+    width: max-content;
+    margin-top: var(--cursor-margin-rectangle-top);
+    margin-left: var(--cursor-margin-rectangle-left);
+    border-radius: 10px;
+    background-color: var(--Primary-white);
+    border: solid 4px var(--Primary-color);
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.custom-cursor-img-view img{
+    max-height: 250px;
+    max-width: 250px;
+    height: 100%;
+    width: auto;
+}
+.custom-cursor-img-view::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-radius: 0;
+    border-style: solid;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-top: 25px solid var(--Primary-color);
+    bottom: -50px;
+}
 .drag #button{
     width: 100px;
     height: 100px;
