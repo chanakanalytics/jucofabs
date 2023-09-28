@@ -7,7 +7,7 @@ body .custom-cursor-active {
     cursor: none !important;
     position: absolute;
     border-radius: 50%;
-    z-index: 9999;
+    z-index: 98;
     box-sizing: border-box;
 }
 .custom-cursor::before,
