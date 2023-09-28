@@ -1,0 +1,43 @@
+h1 {
+    color: var(--Primary-white);
+}
+.gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    column-count: 4;
+    font-family: arial;
+}
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    position: relative;
+    transition: filter 0.5s;
+}
+.gallery-item:hover{
+    border-radius: 0px;
+    filter: saturate(100%) opacity(50%) hue-rotate(0deg) drop-shadow(0 0 0 var(--Primary-color));
+}
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+.gallery-item p {
+    margin: 0;
+    padding: 8px;
+}
+
+@media screen and (max-width: 500px) {
+    .gallery {
+        column-count: 1;
+    }
+}
+@media screen and (min-width: 501px) and (max-width: 700px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+@media screen and (min-width: 701px) and (max-width: 900px) {
+    .gallery {
+        column-count: 3;
+    }
+}
