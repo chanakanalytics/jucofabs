@@ -109,7 +109,7 @@
 }
 
 .about-left h2{
-    font-size: 120px;
+    font-size: min(10vw , 120px);
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fff;
@@ -363,7 +363,7 @@
 
 
 .details-image-text{
-    font-size: 100px;
+    font-size: min(10vw, 100px);
     font-weight: 800;
     line-height: 90px;
     margin-top: -90px;
@@ -674,7 +674,8 @@
     }
     .about-left h2{
         left: 15px;
-        font-size: 90px;
+        font-size: min(10vw, 90px);
+        line-height: min(10vh, 110px);
     }
     .new-right h3{
         font-size: 35px;
@@ -785,9 +786,11 @@
         left: 15px;
     }
     .about-left h2{
+        font-size: 10vw;
         position: relative;
         bottom: 0;
         left: 0;
+        line-height: min(8vh, 80px);
     }
     .about-right{
         width: 100%;
@@ -925,8 +928,8 @@
         margin-top: -65px;
     }
     .about-left h2 {
-        font-size: 70px;
-        line-height: 76px;
+        font-size: min(10vw, 70px);
+        line-height: min(5vh, 76px);
         padding-top: 20px;
     }
     .new-right h3{
@@ -975,7 +978,7 @@
         line-height: 55px;
     }
     .details-image-text {
-        font-size: 59px;
+        font-size: min(13vw, 59px);
         line-height: 69px;
         margin-top: -67px;
     }
@@ -985,6 +988,10 @@
     .circle-btn {
         width: 85px;
         height: 85px;
+    }
+    .friendly-products-slider-items{
+        padding: 0;
+        width: 100vw;
     }
 }
 
