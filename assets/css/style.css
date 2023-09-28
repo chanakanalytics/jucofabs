@@ -146,7 +146,7 @@ div#scroll-bar {
     display: block;
     border-radius: 50px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    z-index: 10000;
+    z-index: 99;
     opacity: 0;
     visibility: hidden;
     transform: translateY(15px);
