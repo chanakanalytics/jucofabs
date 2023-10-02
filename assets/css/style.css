@@ -556,6 +556,56 @@ nav ul li a:hover:before {
     height: calc(100vh - 110px);
     
 }
+
+.innerpage-heading{
+    font-size: 90px;
+    color: var(--Primary-color);
+    font-weight: 200;
+    line-height: 80px;
+}
+.innerpage-heading span{
+    display: block;
+    padding-left: 50px;
+    font-weight: 600;
+    color: var(--Primary-white);
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+.pagination ul{
+    display: flex;
+}
+.pagination ul li a{
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    color: var(--Primary-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 14px;
+    margin: 0 5px;
+    transition: 0.5s;
+}
+.pagination ul li a.active,.pagination ul li a:hover{
+    background-color: var(--Primary-color);
+    border-color: var(--Primary-color);
+}
+.product-dropdown-list select{
+    width: 300px;
+    background-color: transparent;
+    color: var(--Primary-white);
+    border-radius: 5px;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+}
+
 @media (max-width: 1817px) {
 }
 

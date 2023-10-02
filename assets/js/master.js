@@ -153,6 +153,81 @@ jQuery(document).ready(function ($) {
     //         $(slider).slick("slickPlay");
     //     });
     // });
+
+
+    // Product-page-slider
+    $(".product-page-slider").slick({
+        infinite: true,
+        fade:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        speed: 1000,
+    });
+
+    var $sliderProduct = $(".product-page-slider");
+    var $progressBarProduct = $(".slider-first-progress-product");
+    var $progressBarLabelProduct = $(".slider__label-product");
+
+    $sliderProduct.on(
+        "beforeChange",
+        function (event, slick, currentSlide, nextSlide) {
+            var calc = (nextSlide / (slick.slideCount - 1)) * 100;
+
+            $progressBarProduct
+                .css("background-size", calc + "% 100%")
+                .attr("aria-valuenow", calc);
+
+            $progressBarLabelProduct.text(calc + "% completed");
+        }
+    );
+
+    $sliderProduct.on("init reInit afterChange", function (event, slick) {
+        $(".current-items-product span").text(slick.slickCurrentSlide() + 1);
+        $(".total-items-product span").text(slick.slideCount);
+    });
+
+    $(".product-details-slider-img-part-slide").slick({
+        infinite: true,
+        fade:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: true,
+        speed: 1000,
+        asNavFor: ".product-details-slider-img-part-slide-main",
+    });
+
+    $(".product-details-slider-img-part-slide-main").slick({
+        infinite: true,
+        fade:true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        speed: 1000,
+        asNavFor: ".product-details-slider-img-part-slide",
+    });
+
+   
+
+    $('.tab-itemsA').on('click', function() {
+        $('.tab-itemsB, .gallery').removeClass('active');
+        $(this).addClass('active');
+        $('.product-des-content').addClass('active');
+
+    })
+    $('.tab-itemsB').on('click', function() {
+        $(this).addClass('active');
+        $('.gallery').addClass('active');
+        $('.tab-itemsA, .product-des-content').removeClass('active');
+    })
+
+
     // --------- animation  --------//
 
     AOS.init({
