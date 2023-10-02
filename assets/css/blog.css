@@ -27,16 +27,16 @@
 .blog-list-section{
     margin-top: 100px;
 }
-.blog-list-section > div:nth-child(3n + 2){
+/* .blog-list-section > div:nth-child(3n + 2){
     margin-top: 0;
-}
+} */
 
 .articles-section h2 a{
     color: #fff;
 }
 
 .blog-details-section h2{
-    font-size: 45px;
+    /* font-size: 45px; */
     font-weight: 300;
 }
 .blog-details-section p{

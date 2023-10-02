@@ -137,27 +137,6 @@
     width: 40%;
 }
 
-.image-side-text{
-    margin-bottom: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: none;
-    transform-origin: 0 0;
-    transform: rotate(90deg);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 300;
-    display: flex;
-    align-items: center;
-}
-.image-side-text span{
-    width: 50px;
-    height: 1px;
-    background-color: #fff;
-    margin: 0 10px;
-}
-
 .product-slider-section{
     padding: 120px 0;
     position: relative;
@@ -188,40 +167,6 @@
 .height-progress-bar{
     height: 1px;
     margin-bottom: 5px;
-}
-
-.progress {
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-radius: 2px;
-    overflow: hidden;
-    background-color: #fff;
-    background-image: linear-gradient(to right, var(--Primary-color), var(--Primary-color));
-    background-repeat: no-repeat;
-    background-size: 0 100%;
-    transition: background-size .4s ease-in-out;
-}
-
-.product-slider-handel{
-    align-items: end;
-    transform: rotate(90deg);
-    position: absolute;
-    left: 0;
-    bottom: 340px;
-}
-.product-slider-handel .height-progress-bar{
-    width: 50px;
-    margin: 0 10px 17px;
-}
-.product-slider-handel .current-items{
-    font-size: 40px;
-    width: 45px;
-    text-align: right;
-}
-.product-slider-handel .total-items{
-    font-size: 20px;
-    margin-bottom: 8px;
 }
 
 .new-section{
@@ -273,9 +218,6 @@
 }
 .new-slider-handel .new-current-items{
     font-size: 25px;
-}
-.new-progress.progress {
-    background-image: linear-gradient(to right, #82090b, #82090b);
 }
 
 .new-slider-handel .new-total-items{
@@ -847,10 +789,6 @@
         height: 100%;
         object-fit: cover;
     }
-    .product-slider-handel{
-        transform: rotate(0deg);
-        bottom: 0;
-    }
     .product-slider-box-text{
         padding: 0 15px;
     }
@@ -912,10 +850,7 @@
     .text-border{
         padding: 0 30px;
     }
-    .product-slider-handel{
-        transform: none;
-        bottom: 0;
-    }
+    
     .banner-text h1 {
         font-size: 10vw;
         line-height: 73px;

@@ -302,11 +302,6 @@ h1 {
 .product-list-section{
     margin-top: 100px;
 }
-.product-list-section > div:nth-child(3n + 2){
-    margin-top: 0;
-}
-
-
 
 @media screen and (max-width: 500px) {
     .gallery {
