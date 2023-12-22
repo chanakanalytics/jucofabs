@@ -213,7 +213,33 @@ jQuery(document).ready(function ($) {
         asNavFor: ".product-details-slider-img-part-slide",
     });
 
+    var $sliderProductDetails = $(".product-details-slider-img-part-slide-main");
+    var $progressBarProductDetails = $(".slider-product-details-progress");
+    var $progressBarLabelProductDetails = $(".slider__label-product-details");
+
+    $sliderProductDetails.on(
+        "beforeChange",
+        function (event, slick, currentSlide, nextSlide) {
+            var calc = (nextSlide / (slick.slideCount - 1)) * 100;
+
+            $progressBarProductDetails
+                .css("background-size", calc + "% 100%")
+                .attr("aria-valuenow", calc);
+
+            $progressBarLabelProductDetails.text(calc + "% completed");
+        }
+    );
+
+    $sliderProductDetails.on("init reInit afterChange", function (event, slick) {
+        $(".current-product-details-items span").text(slick.slickCurrentSlide() + 1);
+        $(".total-product-details-items span").text(slick.slideCount);
+    });
+
    
+
+
+
+
 
     $('.tab-itemsA').on('click', function() {
         $('.tab-itemsB, .gallery').removeClass('active');
